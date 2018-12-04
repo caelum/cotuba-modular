@@ -65,4 +65,20 @@
 		</dependency>
 	</dependencies>
 
+	<repositories>
+		<repository>
+			<id>psiegman-repo</id>
+			<url>https://github.com/psiegman/mvn-repo/raw/master/releases</url>
+		</repository>
+		<repository>
+			<id>iText Repository</id>
+			<name>iText Repository-releases</name>
+			<url>https://repo.itextsupport.com/releases</url>
+		</repository>
+		<repository>
+			<id>mvn-repo</id>
+			<url>https://rawgit.com/alexandreaquiles/mvn-repo/master</url>
+		</repository>
+	</repositories>
+
 </project>
