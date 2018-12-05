@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	</head>
+
+	<body>
+
+		<div class="jumbotron">
+			<h1 th:text="${livro.titulo}" class="text-center">Um Livro</h1>
+		</div>
+
+		<div class="container">
+
+			<a th:href="@{'/livros/'+${livro.id}+'/pdf'}" class="btn btn-info float-right ml-2">Gerar PDF</a>
+			<a th:href="@{'/livros/'+${livro.id}+'/epub'}" class="btn btn-info float-right mb-5">Gerar EPUB</a>
+	
+			<table class="table table-hover">
+	
+				<thead>
+	
+					<tr>
+						<th>Ordem</th>
+						<th>Nome</th>
+						<th></th>
+					</tr>
+				
+				</thead>
+				
+				<tbody>
+	
+					<tr th:each="capitulo : ${livro.capitulos}">
+						<td th:text="${capitulo.ordem}">1</td>
+						<td th:text="${capitulo.nome}">Primeiro Capítulo</td>
+						<td><a th:href="@{'/livros/'+${livro.id}+'/capitulos/'+${capitulo.id}}" href="capitulos/detalhe.html" class="btn btn-secondary">Editar</a></td>
+					</tr>
+	
+				</tbody>
+
+			</table>
+
+		</div>
+
+	</body>
+
+</html>
