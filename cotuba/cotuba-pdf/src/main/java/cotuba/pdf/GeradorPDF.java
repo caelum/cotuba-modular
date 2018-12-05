@@ -13,9 +13,9 @@ import com.itextpdf.layout.element.IBlockElement;
 import com.itextpdf.layout.element.IElement;
 import com.itextpdf.layout.property.AreaBreakType;
 
-import cotuba.application.GeradorEbook;
 import cotuba.domain.Capitulo;
 import cotuba.domain.Ebook;
+import cotuba.plugin.GeradorEbook;
 
 public class GeradorPDF implements GeradorEbook {
 

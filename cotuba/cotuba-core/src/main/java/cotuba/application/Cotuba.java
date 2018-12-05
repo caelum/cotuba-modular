@@ -8,6 +8,7 @@ import cotuba.domain.Capitulo;
 import cotuba.domain.Ebook;
 import cotuba.domain.FormatoEbook;
 import cotuba.plugin.AoFinalizarGeracao;
+import cotuba.plugin.GeradorEbook;
 
 public class Cotuba {
 

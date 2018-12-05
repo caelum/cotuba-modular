@@ -4,9 +4,9 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-import cotuba.application.GeradorEbook;
 import cotuba.domain.Capitulo;
 import cotuba.domain.Ebook;
+import cotuba.plugin.GeradorEbook;
 import nl.siegmann.epublib.domain.Book;
 import nl.siegmann.epublib.domain.Resource;
 import nl.siegmann.epublib.epub.EpubWriter;
