@@ -25,16 +25,6 @@
 			<artifactId>jsoup</artifactId>
 			<version>1.11.2</version>
 		</dependency>
-		<dependency>
-			<groupId>cotuba</groupId>
-			<artifactId>cotuba-pdf</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>cotuba</groupId>
-			<artifactId>cotuba-epub</artifactId>
-			<version>${project.version}</version>
-		</dependency>
 	</dependencies>
 
 </project>
