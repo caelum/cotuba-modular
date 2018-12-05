@@ -6,6 +6,7 @@ import java.nio.file.Path;
 
 import cotuba.domain.Capitulo;
 import cotuba.domain.Ebook;
+import cotuba.domain.FormatoEbook;
 import cotuba.plugin.GeradorEbook;
 import nl.siegmann.epublib.domain.Book;
 import nl.siegmann.epublib.domain.Resource;
@@ -39,6 +40,11 @@ public class GeradorEPUB implements GeradorEbook {
 			throw new RuntimeException("Erro ao criar arquivo EPUB: " + arquivoDeSaida.toAbsolutePath(), ex);
 		}
 
+	}
+
+	@Override
+	public FormatoEbook formato() {
+		return FormatoEbook.EPUB;
 	}
 
 }
