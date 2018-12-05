@@ -19,6 +19,12 @@
 			<version>1.4</version>
 		</dependency>
 
+		<dependency>
+			<groupId>cotuba</groupId>
+			<artifactId>cotuba-core</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
