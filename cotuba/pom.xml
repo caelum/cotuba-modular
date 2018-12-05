@@ -16,5 +16,6 @@
 	<modules>
 		<module>cotuba-core</module>
 		<module>cotuba-cli</module>
+		<module>cotuba-pdf</module>
 	</modules>
 </project>
