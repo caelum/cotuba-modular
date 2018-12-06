@@ -3,6 +3,7 @@ package cotuba.cli;
 import java.nio.file.Path;
 
 import cotuba.application.Cotuba;
+import cotuba.application.RepositorioDeMDs;
 
 public class Main {
 
@@ -13,10 +14,14 @@ public class Main {
 		Path arquivoDeSaida = opcoesCLI.getArquivoDeSaida();
 		boolean modoVerboso = opcoesCLI.isModoVerboso();
 
+		Path diretorioDosMD = opcoesCLI.getDiretorioDosMD();
+
 		try {
 
+			RepositorioDeMDs repositorio = new MDsDoDiretorio(diretorioDosMD);
+
 			Cotuba cotuba = new Cotuba();
-			cotuba.executa(opcoesCLI, System.out::println);
+			cotuba.executa(opcoesCLI, System.out::println, repositorio);
 
 			System.out.println("Arquivo gerado com sucesso: " + arquivoDeSaida);
 
