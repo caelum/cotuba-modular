@@ -88,7 +88,6 @@ public class LeitorOpcoesCLI implements ParametrosCotuba {
 
 	}
 
-	@Override
 	public Path getDiretorioDosMD() {
 		return diretorioDosMD;
 	}
