@@ -17,6 +17,7 @@ import org.commonmark.parser.Parser;
 import org.commonmark.renderer.html.HtmlRenderer;
 
 import cotuba.application.RenderizadorMDParaHTML;
+import cotuba.application.RepositorioDeMDs;
 import cotuba.domain.Capitulo;
 import cotuba.domain.builder.CapituloBuilder;
 import cotuba.tema.AplicadorTema;
@@ -24,7 +25,7 @@ import cotuba.tema.AplicadorTema;
 public class RenderizadorMDParaHTMLComCommonMark implements RenderizadorMDParaHTML {
 
 	@Override
-	public List<Capitulo> renderiza(Path diretorioDosMD) {
+	public List<Capitulo> renderiza(RepositorioDeMDs repositorioDeMDs) {
 
 		List<Capitulo> capitulos = new ArrayList<>();
 
