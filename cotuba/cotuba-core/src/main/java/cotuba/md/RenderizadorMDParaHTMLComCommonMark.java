@@ -1,13 +1,7 @@
 package cotuba.md;
 
-import java.io.IOException;
-import java.nio.file.FileSystems;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.PathMatcher;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Stream;
 
 import org.commonmark.node.AbstractVisitor;
 import org.commonmark.node.Heading;
@@ -28,13 +22,15 @@ public class RenderizadorMDParaHTMLComCommonMark implements RenderizadorMDParaHT
 	public List<Capitulo> renderiza(RepositorioDeMDs repositorioDeMDs) {
 
 		List<Capitulo> capitulos = new ArrayList<>();
+		
+		for (String md : repositorioDeMDs.obtemMDsDosCapitulos()) {
 
 				CapituloBuilder capituloBuilder = new CapituloBuilder();
 
 				Parser parser = Parser.builder().build();
 				Node document = null;
 				try {
-					document = parser.parseReader(Files.newBufferedReader(arquivoMD));
+					document = parser.parse(md);
 					document.accept(new AbstractVisitor() {
 						@Override
 						public void visit(Heading heading) {
@@ -53,7 +49,7 @@ public class RenderizadorMDParaHTMLComCommonMark implements RenderizadorMDParaHT
 
 					});
 				} catch (Exception ex) {
-					throw new RuntimeException("Erro ao fazer parse do arquivo " + arquivoMD, ex);
+					throw new RuntimeException("Erro ao fazer parse de markdown ", ex);
 				}
 
 				try {
@@ -69,8 +65,10 @@ public class RenderizadorMDParaHTMLComCommonMark implements RenderizadorMDParaHT
 					capitulos.add(capitulo);
 
 				} catch (Exception ex) {
-					throw new RuntimeException("Erro ao renderizar para HTML o arquivo " + arquivoMD, ex);
+					throw new RuntimeException("Erro ao renderizar MD para HTML", ex);
 				}
+
+		}
 
 		return capitulos;
 	}
