@@ -9,8 +9,8 @@
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>10</maven.compiler.source>
+		<maven.compiler.target>10</maven.compiler.target>
 	</properties>
 
 	<modules>
@@ -20,4 +20,5 @@
 		<module>cotuba-epub</module>
 		<module>cotuba-web</module>
 	</modules>
+
 </project>
