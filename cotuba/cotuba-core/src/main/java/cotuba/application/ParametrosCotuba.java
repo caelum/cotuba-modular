@@ -6,8 +6,6 @@ import cotuba.domain.FormatoEbook;
 
 public interface ParametrosCotuba {
 
-	Path getDiretorioDosMD();
-
 	FormatoEbook getFormato();
 
 	Path getArquivoDeSaida();
