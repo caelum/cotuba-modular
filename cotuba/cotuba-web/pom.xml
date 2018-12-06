@@ -57,25 +57,26 @@
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
 
-		<!-- inserido -->
 		<dependency>
 			<groupId>cotuba</groupId>
 			<artifactId>cotuba-core</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		<!-- inserido -->
 		<dependency>
 			<groupId>cotuba</groupId>
 			<artifactId>cotuba-pdf</artifactId>
 			<version>${project.version}</version>
 		</dependency>
-		<!-- inserido -->
 		<dependency>
 			<groupId>cotuba</groupId>
 			<artifactId>cotuba-epub</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>javax.xml.bind</groupId>
+			<artifactId>jaxb-api</artifactId>
+		</dependency>
 	</dependencies>
 
 </project>
