@@ -29,10 +29,6 @@ public class RenderizadorMDParaHTMLComCommonMark implements RenderizadorMDParaHT
 
 		List<Capitulo> capitulos = new ArrayList<>();
 
-		PathMatcher matcher = FileSystems.getDefault().getPathMatcher("glob:**/*.md");
-		try (Stream<Path> arquivosMD = Files.list(diretorioDosMD)) {
-			arquivosMD.filter(matcher::matches).sorted().forEach(arquivoMD -> {
-
 				CapituloBuilder capituloBuilder = new CapituloBuilder();
 
 				Parser parser = Parser.builder().build();
@@ -75,11 +71,6 @@ public class RenderizadorMDParaHTMLComCommonMark implements RenderizadorMDParaHT
 				} catch (Exception ex) {
 					throw new RuntimeException("Erro ao renderizar para HTML o arquivo " + arquivoMD, ex);
 				}
-			});
-		} catch (IOException ex) {
-			throw new RuntimeException("Erro tentando encontrar arquivos .md em " + diretorioDosMD.toAbsolutePath(),
-					ex);
-		}
 
 		return capitulos;
 	}
