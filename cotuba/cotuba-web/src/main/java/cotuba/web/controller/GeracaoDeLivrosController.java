@@ -11,9 +11,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import cotuba.web.SpringFileUtils;
+import cotuba.web.application.GeracaoDeLivros;
 
 @Controller
 public class GeracaoDeLivrosController {
+
+	private final GeracaoDeLivros geracao;
+
+	public GeracaoDeLivrosController(GeracaoDeLivros geracao) {
+		this.geracao = geracao;
+	}
 
 	@GetMapping("/livros/{id}/pdf")
 	public ResponseEntity<ByteArrayResource> geraPDF(@PathVariable("id") Long id, Model model) {
