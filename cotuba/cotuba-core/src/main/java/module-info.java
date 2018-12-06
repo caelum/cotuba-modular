@@ -5,4 +5,9 @@ module cotuba.core {
 
 	requires jsoup;
 	requires org.commonmark;
+
+	uses cotuba.plugin.Tema;
+	uses cotuba.plugin.AoFinalizarGeracao;
+	uses cotuba.plugin.GeradorEbook;
+
 }
