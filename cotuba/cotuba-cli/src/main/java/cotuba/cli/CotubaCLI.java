@@ -2,12 +2,21 @@ package cotuba.cli;
 
 import java.nio.file.Path;
 
+import org.springframework.stereotype.Component;
+
 import cotuba.application.Cotuba;
 import cotuba.application.RepositorioDeMDs;
 
-public class Main {
+@Component
+public class CotubaCLI {
 
-	public static void main(String[] args) {
+	private final Cotuba cotuba;
+
+	public CotubaCLI(Cotuba cotuba) {
+		this.cotuba = cotuba;
+	}
+
+	public void executa(String[] args) {
 
 		LeitorOpcoesCLI opcoesCLI = new LeitorOpcoesCLI(args);
 
@@ -20,7 +29,6 @@ public class Main {
 
 			RepositorioDeMDs repositorio = new MDsDoDiretorio(diretorioDosMD);
 
-			Cotuba cotuba = new Cotuba();
 			cotuba.executa(opcoesCLI, System.out::println, repositorio);
 
 			System.out.println("Arquivo gerado com sucesso: " + arquivoDeSaida);
