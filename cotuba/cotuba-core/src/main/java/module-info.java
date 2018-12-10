@@ -14,4 +14,7 @@ module cotuba.core {
 	uses cotuba.plugin.AoFinalizarGeracao;
 	uses cotuba.plugin.GeradorEbook;
 
+	opens cotuba.plugin;
+	opens cotuba.md;
+	opens cotuba.tema;
 }
