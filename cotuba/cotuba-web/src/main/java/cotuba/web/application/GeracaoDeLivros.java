@@ -14,15 +14,15 @@ import cotuba.web.domain.Livro;
 public class GeracaoDeLivros {
 
 	private final CadastroDeLivros livros;
+	private final Cotuba cotuba;
 
-	public GeracaoDeLivros(CadastroDeLivros livros) {
+	public GeracaoDeLivros(CadastroDeLivros livros, Cotuba cotuba) {
 		this.livros = livros;
+		this.cotuba = cotuba;
 	}
 
 	public Path geraLivro(Long id, FormatoEbook formato) {
 		Livro livro = livros.detalha(id);
-
-		Cotuba cotuba = new Cotuba();
 
 		ParametrosCotuba parametros = new ParametrosCotubaWeb(formato);
 		RepositorioDeMDs mdsDoBD = new MDsDoBancoDeDados(livro);
