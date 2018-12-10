@@ -7,4 +7,6 @@ module cotuba.cli {
 	requires spring.core;
 
 	requires java.sql;
+	
+	opens cotuba.cli;
 }
