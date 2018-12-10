@@ -6,6 +6,10 @@ module cotuba.core {
 	requires jsoup;
 	requires org.commonmark;
 
+	requires spring.context;
+	requires spring.beans;
+	requires spring.core;
+
 	uses cotuba.plugin.Tema;
 	uses cotuba.plugin.AoFinalizarGeracao;
 	uses cotuba.plugin.GeradorEbook;
